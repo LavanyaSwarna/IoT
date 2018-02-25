@@ -1,0 +1,28 @@
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(37, GPIO.OUT)
+GPIO.setup(36, GPIO.OUT)
+GPIO.setup(40,GPIO.OUT)
+GPIO.setwarnings(False)
+while True:
+if(GPIO.input(7) ==1):
+print(“Push down”)
+GPIO.output(37,True)
+time.sleep(5)
+GPIO.output(37,False)
+GPIO.output(36,True)
+time.sleep(2)
+GPIO.output(36,False)
+GPIO.output(40,True)
+time.sleep(3)
+GPIO.output(40,False)
+GPIO.output(37,False)
+GPIO.output(36,False)
+GPIO.output(40,False)
+except KeyboardInterrupt:
+pass
+finally:
+GPIO.cleanup()
