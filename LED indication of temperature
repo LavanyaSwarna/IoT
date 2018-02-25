@@ -1,0 +1,18 @@
+if((int)temperature >= 25){
+digitalWrite(4, HIGH);
+delay(500);
+digitalWrite(4, LOW);
+delay(500);
+}
+if((int)temperature < 25 && (int)temperature > 15){
+digitalWrite(5, HIGH);
+delay(500);
+digitalWrite(5, LOW);
+delay(500);
+}
+if((int)temperature <= 15){
+digitalWrite(16, HIGH);
+delay(500);
+digitalWrite(16, LOW);
+delay(500);
+}
